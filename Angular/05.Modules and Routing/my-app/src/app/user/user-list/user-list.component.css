@@ -12,3 +12,8 @@ background-color: blueviolet;
 color: white;
 cursor: pointer;
 }
+
+.disabled {
+    background-color: gray;
+    pointer-events: none;
+}
