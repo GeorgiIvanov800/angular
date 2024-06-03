@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnDestroy(): void {
-    console.log('On Destroy invoked');
+    console.log('User-List destroyed!');
   }
 
   ngOnInit(): void {
@@ -31,7 +31,6 @@ export class UserListComponent implements OnInit, OnDestroy {
 
     //start fetching
     this.userService.getUsers().subscribe((users) => {
-      console.log(users);
       this.users = users;
       //after fetch
       this.globalLoaderService.hideLoader();
