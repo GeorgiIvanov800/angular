@@ -10,10 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailComponent implements OnInit {
   constructor(
     private userService: UserService,
-    activetedRoute: ActivatedRoute
+    private activetedRoute: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    //
+    this.activetedRoute.params.subscribe((v) => {
+      const id = v['id'];
+
+      this.userService.getSingleUser(id).subscribe((user) => {
+        console.log(user);
+      });
+    });
+
     // this.userService.getSingleUser('3').subscribe((user) => {
     //   console.log(user);
     // });

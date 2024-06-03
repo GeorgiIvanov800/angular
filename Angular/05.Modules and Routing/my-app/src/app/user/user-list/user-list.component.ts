@@ -11,18 +11,25 @@ import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.se
 export class UserListComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   users: User[] = [];
-
+  counter: number = 0;
+  interval: any;
   constructor(
     private userService: UserService,
     private globalLoaderService: GlobalLoaderService
   ) {}
 
   ngOnDestroy(): void {
+    //To clear data
     console.log('User-List destroyed!');
+    clearInterval(this.interval);
   }
 
   ngOnInit(): void {
     this.fetchUsers();
+    this.interval = setInterval(() => {
+      this.counter += 1;
+      console.log(this.counter);
+    }, 1000);
   }
 
   fetchUsers() {
