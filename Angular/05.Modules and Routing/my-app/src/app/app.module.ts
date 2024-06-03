@@ -7,6 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { UserModule } from './user/user.module';
     CoreModule,
     UserModule,
     HttpClientModule,
+    TodoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

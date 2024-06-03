@@ -1,0 +1,11 @@
+.wrapper {
+    border: 2px solid pink;
+    width: 350px;
+    height: 180px;
+    font-size: 22px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
