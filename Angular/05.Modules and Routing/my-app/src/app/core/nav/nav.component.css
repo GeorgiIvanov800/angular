@@ -1,0 +1,14 @@
+.nav-btn {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(211, 143, 95);
+    color: white;
+
+    width: fit-content;
+}
+
+.nav-btn:hover {
+    background-color: rgb(75, 47, 27);
+    color: burlywood;
+    cursor: pointer;
+}

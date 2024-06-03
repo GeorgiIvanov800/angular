@@ -7,6 +7,6 @@ import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [GlobalLoaderComponent, NavComponent],
   imports: [CommonModule, SharedModule],
-  exports: [GlobalLoaderComponent],
+  exports: [GlobalLoaderComponent, NavComponent],
 })
 export class CoreModule {}
