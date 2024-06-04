@@ -11,6 +11,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ThemeModule } from './theme/theme.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ThemeModule } from './theme/theme.module';
     SharedModule,
     HttpClientModule,
     ThemeModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
