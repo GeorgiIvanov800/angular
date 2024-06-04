@@ -10,6 +10,7 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     CoreModule,
     SharedModule,
     HttpClientModule,
+    ThemeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
