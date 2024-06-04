@@ -5,9 +5,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserRoutingModule } from './user-routing-module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [LoginComponent, ProfileComponent, RegisterComponent],
-  imports: [CommonModule, UserRoutingModule],
+  imports: [CommonModule, UserRoutingModule, RouterModule],
 })
 export class UserModule {}
