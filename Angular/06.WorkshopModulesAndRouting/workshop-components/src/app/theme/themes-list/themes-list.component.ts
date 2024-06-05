@@ -25,4 +25,16 @@ export class ThemesListComponent implements OnInit {
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
+
+  get userId(): string {
+    return this.userService.user?.id || '';
+  }
+
+  isSubscribed(theme: Theme) {
+    const isSubscirbedUser = theme.subscribers.find((s) => {
+      return s === this.userService.user?.id;
+    });
+
+    return !!isSubscirbedUser;
+  }
 }
