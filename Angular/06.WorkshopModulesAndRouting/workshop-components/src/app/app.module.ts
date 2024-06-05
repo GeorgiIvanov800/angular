@@ -16,12 +16,12 @@ import { ErrorComponent } from './error/error.component';
   declarations: [AppComponent, HomeComponent, ErrorComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
     HttpClientModule,
     ThemeModule,
     UserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
