@@ -14,7 +14,7 @@ export class MyRouterLinkDirective implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.appMyRouterLink);
+    // console.log(this.appMyRouterLink);
     this.renderer.listen(
       this.elRef.nativeElement,
       'click',
@@ -23,7 +23,7 @@ export class MyRouterLinkDirective implements OnInit {
   }
 
   clickHandler(e: MouseEvent) {
-    console.log('click');
+    // console.log('click');
 
     this.router.navigate([this.appMyRouterLink]);
   }

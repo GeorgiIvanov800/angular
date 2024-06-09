@@ -62,8 +62,8 @@ export class HighlightDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('onDestroy Invoked');
-    console.log(this.unSubFromEventsArray);
+    // console.log('onDestroy Invoked');
+    // console.log(this.unSubFromEventsArray);
     // Unsubscribe from event
     this.unSubFromEventsArray.forEach((eventFn) => {
       eventFn();
