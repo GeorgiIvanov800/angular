@@ -7,6 +7,8 @@ import {
   Renderer2,
 } from '@angular/core';
 
+type MyVoid = () => void;
+
 @Directive({
   selector: '[appHighlight]',
 })
@@ -14,6 +16,9 @@ export class HighlightDirective implements OnInit, OnDestroy {
   // @HostListener('mouseover', ['$event']) mouseOverHandler(e: MouseEvent) {
   //   console.log('mouseOver ', e);
   // }
+
+  unSubFromEventsArray: MyVoid[] = [];
+
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
@@ -24,17 +29,20 @@ export class HighlightDirective implements OnInit, OnDestroy {
     // Use Renderer2 to manipulate DOM elements -> Good pracitce
     // this.renderer.setStyle(this.elRef.nativeElement, 'background', 'lightblue');
 
-    this.renderer.listen(
+    const mouseEnterEvent = this.renderer.listen(
       this.elRef.nativeElement,
       'mouseenter',
       this.mousEneterHandler.bind(this)
     );
 
-    this.renderer.listen(
+    const mouseLeaveEvent = this.renderer.listen(
       this.elRef.nativeElement,
       'mouseleave',
       this.mouseLeaveHandler.bind(this)
     );
+
+    this.unSubFromEventsArray.push(mouseEnterEvent);
+    this.unSubFromEventsArray.push(mouseLeaveEvent);
   }
 
   mousEneterHandler(e: MouseEvent): void {
@@ -55,5 +63,10 @@ export class HighlightDirective implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('onDestroy Invoked');
+    console.log(this.unSubFromEventsArray);
+    // Unsubscribe from event
+    this.unSubFromEventsArray.forEach((eventFn) => {
+      eventFn();
+    });
   }
 }
