@@ -32,6 +32,7 @@
   let-testME="myCustomValue"
   let-myNumber="myNum"
   let-defualt=""
+  #directiveRef="appMyStructural"
 >
   <div>Structural Directive - Usage 2</div>
 
@@ -39,3 +40,12 @@
   <div>MyNum: {{ myNumber }}</div>
   <div>Default if it points no where : {{ defualt }}</div>
 </ng-template>
+
+<button (click)="simpleClick(directiveRef)">Simple Click</button>
+
+<br />
+<!-- Usage 3 -->
+<ng-template #tmp>
+  <div>Structural Directive - Usage 3</div>
+</ng-template>
+<ng-container [appMyStructural]="isShown" [myTmpRef]="tmp" />
