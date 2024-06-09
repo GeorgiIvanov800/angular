@@ -2,6 +2,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  OnDestroy,
   OnInit,
   Renderer2,
 } from '@angular/core';
@@ -9,10 +10,10 @@ import {
 @Directive({
   selector: '[appHighlight]',
 })
-export class HighlightDirective implements OnInit {
-  @HostListener('mouseover', ['$event']) mouseOverHandler(e: MouseEvent) {
-    console.log('mouseOver ', e);
-  }
+export class HighlightDirective implements OnInit, OnDestroy {
+  // @HostListener('mouseover', ['$event']) mouseOverHandler(e: MouseEvent) {
+  //   console.log('mouseOver ', e);
+  // }
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
@@ -50,5 +51,9 @@ export class HighlightDirective implements OnInit {
 
     /** Setting classes */
     this.renderer.removeClass(this.elRef.nativeElement, 'highlight');
+  }
+
+  ngOnDestroy(): void {
+    console.log('onDestroy Invoked');
   }
 }
