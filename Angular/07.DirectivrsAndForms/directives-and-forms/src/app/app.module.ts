@@ -11,7 +11,15 @@ import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyStructuralDirective } from './my-structural.directive';
 
 @NgModule({
-  declarations: [AppComponent, HighlightDirective, LoginComponent, RegisterComponent, HomeComponent, MyRouterLinkDirective, MyStructuralDirective],
+  declarations: [
+    AppComponent,
+    HighlightDirective,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    MyRouterLinkDirective,
+    MyStructuralDirective,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

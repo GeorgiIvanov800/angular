@@ -1,2 +1,9 @@
-<h1>login works!</h1>
 <div routerLink="/home">Go back Home</div>
+<h1>Login</h1>
+<!-- Tampalte Driven! -->
+<form #loginForm="ngFrom">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" />
+  </div>
+</form>
