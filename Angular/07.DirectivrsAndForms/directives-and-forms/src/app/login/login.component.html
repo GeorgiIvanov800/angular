@@ -32,7 +32,11 @@
       ngModel
       required
       [appMaxCount]="4"
+      #passwordInput="ngModel"
     />
+  </div>
+  <div *ngIf="passwordInput.errors?.['appMaxCount']" style="color: orangered">
+    Password is longer than {{passwordInput.errors?.['appMaxCount']}}
   </div>
   <button>Login</button>
 </form>
