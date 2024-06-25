@@ -8,6 +8,12 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
   formSubmitHandler(form: NgForm) {
-    console.log(form);
+    console.log(form.value);
+
+    // form.value => ngModel on 'input'
+    const { email, password } = form?.value;
+    //2 ways of resseting the data
+    //form.reset();
+    form.setValue({ email: '', password: '' });
   }
 }
