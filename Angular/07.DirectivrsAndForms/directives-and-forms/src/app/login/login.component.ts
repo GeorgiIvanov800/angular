@@ -10,7 +10,6 @@ export class LoginComponent {
   formSubmitHandler(form: NgForm) {
     if (form?.invalid) {
       console.log('Form is Invalid!');
-
       return;
     }
 
@@ -18,7 +17,7 @@ export class LoginComponent {
     console.log(form.value);
 
     // form.value => ngModel on 'input'
-    const { email, password } = form?.value;
+    const { email, password } = form.value;
 
     //2 ways of resseting the data
     //form.reset();
