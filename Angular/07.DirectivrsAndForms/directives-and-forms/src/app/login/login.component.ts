@@ -7,6 +7,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  //Render static content
+  //ngOnInit(): void {}
+
+  //Renders the final contetn + dynamic content
+  // ngAfterViewInit(): {}
+
   formSubmitHandler(form: NgForm) {
     if (form?.invalid) {
       console.log('Form is Invalid!');
