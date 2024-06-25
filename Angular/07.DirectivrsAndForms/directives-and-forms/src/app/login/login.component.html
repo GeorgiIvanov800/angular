@@ -1,9 +1,11 @@
 <div routerLink="/home">Go back Home</div>
 <h1>Login</h1>
 <!-- Tampalte Driven! -->
-<form #loginForm="ngFrom">
+<form #loginForm="ngForm" (ngSubmit)="formSubmitHandler(loginForm)">
   <div class="form-group">
     <label for="email">Email</label>
     <input type="text" id="email" name="email" />
   </div>
+
+  <button>Login</button>
 </form>
